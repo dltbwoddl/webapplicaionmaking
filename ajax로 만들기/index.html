@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<!--ajax를 이용하요 공통 분모가 많은 페이지들을 링크가 아니라 싱글페이지로 구현할 수 있다.-->
+<body>
+  <header>
+    <!-- <h1><a href="http://localhost/">Javascript</h1> 해당 코드로 하면 localhost페이지로 바로 넘어간다.
+    a태그를 넣을 필요가 없다. 왜냐면 항상 그 페이지이기 때문에.
+  a태그가 fetch 코드 밑에 있다면 바로 local로 안넘어간다.-->
+    <h1>Javascript</h1>
+  </header>
+  <nav>
+    <ol>
+      <li><input type="button" value="Javascript" onclick="
+        fetch('page_html.html').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML = text;
+          })
+        })
+      "></li>
+      <li><input type="button" value="변수와 상수" onclick="
+        fetch('page_ac.html').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML = text;
+          })
+        })
+      "></li>
+      <li><input type="button" value="연산자" onclick="
+        fetch('page_op.html').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML = text;
+          })
+        })
+      "></li>
+    </ol>
+  </nav>
+  <article>
+
+  </article>
+</body>
+
+</html>
